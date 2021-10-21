@@ -1,11 +1,10 @@
 import { useState } from "react"
 
-//CREAR STOCK
-export const ItemCount = ({stock, initial}) => {
+export const ItemCount = ({ stock, initial, onAdd }) => {
 
     const [count, setCount] = useState(parseInt(initial));
 
-    const onAdd = () => {
+    const onIncrease = () => {
         if (count < stock) {
             setCount(count + 1)
         }
@@ -18,11 +17,10 @@ export const ItemCount = ({stock, initial}) => {
 
     return (
         <>
-            
             <h2> Items Agregados: {count} </h2>
             <button onClick={onDecrease}>-</button>
-            <button>Agregar</button>
-            <button onClick={onAdd}>+</button>
+            <button onClick={() => onAdd()}>Agregar</button>
+            <button onClick={onIncrease}>+</button>
             <h3>Stock: {stock}</h3>
         </>
     )
