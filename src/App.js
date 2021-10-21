@@ -3,23 +3,27 @@ import { NavBar } from './components/navbar/NavBar.js';
 import './components/navbar/NavBar.css';
 import { ItemListContainer } from './components/itemlistcontainer/ItemListContainer';
 import { ItemCount } from './components/itemcount/ItemCount';
-
+import './components/itemlistcontainer/itemlist/Item.css'
 
 function App() {
-  return (
-    
-    <div className="App">
-  
-      <NavBar />
-      <ItemListContainer greeting='HOLA MUNDO' />
-      <ItemCount stock='9' initial='1'/>
 
+  const onAdd = () => {
+    console.log('agregue un producto al carro')
+  }
+
+  return (
+
+    <div className="App">
+      <NavBar />
+      <ItemCount stock='9' initial='1' onAdd={onAdd}/>
+
+      <ItemListContainer />
+     
       <header className='App-header'>
-      <h1>Proximamente mas cosas!</h1>
+        <h5>Proximamente mas cosas!</h5>
       </header>
-    </div>    
+    </div>
   )
 }
 
 export default App;
- 

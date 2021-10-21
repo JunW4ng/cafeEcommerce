@@ -1,0 +1,31 @@
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.cards1 {
+    width: 20%;
+    background-color: #544435;
+    padding-bottom: 30px;
+    display: inline-block;
+}
+
+.cards {
+    width: 20%;
+    background-color: #544435;
+    padding-bottom: 30px;
+    margin-left: 50px;
+    display: inline-block;
+}
+
+img{
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+}
+
+.description {
+    text-align: center;
+}
