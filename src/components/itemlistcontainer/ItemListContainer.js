@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
 import { useState } from "react/cjs/react.development"
-import { Item } from "./itemlist/Item";
+import { MapeoLista } from "./itemlist/ItemList";
 
 const coffee = [
     {
@@ -56,8 +56,6 @@ export const ItemListContainer = () => {
     }, []);
     
         return (
-            <div className="main">
-                {coffeeGrano?.map(coffee => <Item coffee={coffee} />)}
-            </div>
+            <MapeoLista listaCoffee={coffeeGrano}/>
         )
 };
