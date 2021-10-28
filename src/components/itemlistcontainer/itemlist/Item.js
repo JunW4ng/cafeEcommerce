@@ -1,6 +1,6 @@
 import React from "react"
 
-export const Item = ({coffee}) => {
+export const Item = ({ coffee }) => {
     return (
         <>
             <div className="cards">
