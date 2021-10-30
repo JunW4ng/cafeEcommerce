@@ -1,0 +1,5 @@
+.detailCard {
+    display: flex;
+    max-width: 540px;
+    text-align: center;
+}

@@ -54,8 +54,8 @@ export const ItemListContainer = () => {
             console.log("soy el catch: ", err);
         });
     }, []);
-    
-        return (
-            <MapeoLista listaCoffee={coffeeGrano}/>
-        )
+
+    return (
+        <MapeoLista listaCoffee={coffeeGrano} />
+    )
 };
