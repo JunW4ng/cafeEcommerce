@@ -13,9 +13,6 @@ export const Item = ({ coffee }) => {
                 <div className="title">
                     <h3>Precio: ${coffee.price}</h3>
                 </div>
-                <div className="description">
-                    <p>{coffee.description}</p>
-                </div>
             </div>
         </>
     )
