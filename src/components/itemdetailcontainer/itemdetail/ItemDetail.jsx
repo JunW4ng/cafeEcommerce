@@ -1,21 +1,25 @@
 import React from "react";
 
-export const ItemDetail = ({ name, price, img, description }) => {
+export const ItemDetail = ({ item }) => {
   return (
     <>
-      <div className="card detailCard">
-        <div className="row g-0">
-          <div className="image">
-            <img src={img} alt=""></img>
-          </div>
-          <div className="textDetail">
-            <div className="card-body">
-              <h1 className="card-title">{name}</h1>
-              <p className="card-text">{description}</p>
-              <p className="card-text">$ {price}</p>
+      <div className="detailCard card">
+        {item?.map((detail) => (
+          <div key={detail.id}>
+            <div>
+              <img src={detail.pictureUrl} alt=""></img>
+            </div>
+            <div className="detailName">
+              <h1>{detail.name}</h1>
+            </div>
+            <div className="detailPrice">
+              <h2>$ {detail.price}</h2>
+            </div>
+            <div className="detailDescription">
+              <h4>{detail.description}</h4>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </>
   );
