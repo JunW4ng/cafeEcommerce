@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import { CartWidget } from "../cartwidget/CartWidget"
 
 export const NavBar = () => {
@@ -5,10 +6,9 @@ export const NavBar = () => {
         <nav className="NavBarItems">
             <div className="logo">J | W</div>
             <ul className="nav-links">
-                <li><a href="https://www.google.com">Home</a></li>
-                <li><a href="https://www.google.com">Tienda</a></li>
-                <li><a href="https://www.google.com">Nosotros</a></li>
-                <li><a href="https://www.google.com">Contacto</a></li>
+                <li><Link to={`/`}>Store</Link></li>
+                <li><Link to={`/detail`}>Detail</Link></li>
+                <li><a href="https://www.google.com">Contact</a></li>
                 <li><a href="https://www.google.com"><CartWidget /></a></li>
             </ul>
         </nav>
