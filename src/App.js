@@ -6,6 +6,7 @@ import { ItemCount } from './components/itemcount/ItemCount';
 import './components/itemlistcontainer/itemlist/Item.css'
 import { ItemDetailContainer } from './components/itemdetailcontainer/ItemDetailContainer';
 import './components/itemdetailcontainer/itemdetail/ItemDetail.css'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 function App() {
 
@@ -15,15 +16,23 @@ function App() {
 
   return (
 
-    <div className="App">
+    <BrowserRouter>
       <NavBar />
-      <ItemCount stock='9' initial='1' onAdd={onAdd}/>
-      <ItemListContainer />
-      <ItemDetailContainer/>
-      <header className='App-header'>
-        <h5>Proximamente mas cosas!</h5>
-      </header>
-    </div>
+      <Switch>
+        <div className="App">
+          <Route exact path="/">
+            <ItemCount stock='9' initial='1' onAdd={onAdd} />
+            <ItemListContainer />
+          </Route>
+          <Route path="/detailproduct">
+            <ItemDetailContainer />
+          </Route>
+          <header className='App-header'>
+            <h5>Proximamente mas cosas!</h5>
+          </header>
+        </div>
+      </Switch>
+    </BrowserRouter>
   )
 }
 
