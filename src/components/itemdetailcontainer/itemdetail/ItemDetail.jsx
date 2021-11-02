@@ -1,11 +1,15 @@
 import React from "react";
+import { ItemCount } from "../../itemcount/ItemCount";
 
+const onAdd = () => {
+  console.log(`Se agrego un item al carro`);
+};
 export const ItemDetail = ({ item }) => {
+
   return (
     <>
       <div className="detailCard card">
-        {
-        item?
+        {item ? (
           <div key={item.id}>
             <div>
               <img src={item.pictureUrl} alt=""></img>
@@ -14,14 +18,18 @@ export const ItemDetail = ({ item }) => {
               <h1>{item.name}</h1>
             </div>
             <div className="detailPrice">
-              <h2>$ {item.price}</h2>
+              <h1>$ {item.price}</h1>
             </div>
             <div className="detailDescription">
-              <h4>{item.description}</h4>
+              <h3>{item.description}</h3>
+            </div>
+            <div>
+              <ItemCount stock={item.stock} initial="1" onAdd={onAdd}/>
             </div>
           </div>
-          : "Espera un momento"
-          }
+        ) : (
+          "Cargando detalle..."
+        )}
       </div>
     </>
   );

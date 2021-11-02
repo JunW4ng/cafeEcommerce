@@ -6,7 +6,7 @@ export const MapeoLista = ({ listaCoffee }) => {
     <div>
       {listaCoffee
         ? listaCoffee.map((coffee) => <Item key={coffee.id} coffee={coffee} />)
-        : "Espera un momento..."}
+        : "Cargando productos..."}
     </div>
   );
 };

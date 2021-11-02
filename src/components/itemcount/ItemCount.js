@@ -17,7 +17,7 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
 
     return (
         <>
-            <h2> Items Agregados: {count} </h2>
+            <h3> Items Agregados: {count} </h3>
             <button onClick={onDecrease}>-</button>
             <button onClick={() => onAdd()}>Agregar</button>
             <button onClick={onIncrease}>+</button>
