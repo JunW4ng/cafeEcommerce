@@ -6,7 +6,7 @@ export const Item = ({ coffee }) => {
         <>
             <div className="cards">
                 <div className="image">
-                    <Link to="/item/2"><img src={coffee.pictureUrl} alt=""></img></Link>
+                    <Link to={`/item/${coffee.id}`}><img src={coffee.pictureUrl} alt=""></img></Link>
                 </div>
                 <div className="title">
                     <h1>{coffee.title}</h1>
