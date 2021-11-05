@@ -12,7 +12,7 @@ export const ItemListContainer = () => {
         const task = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(CoffeeProducts)
-            }, 2000);
+            }, 1500);
         });
 
         task.then(
