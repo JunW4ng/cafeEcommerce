@@ -1,5 +1,5 @@
 import "./App.css";
-import { NavBar } from "./components/navbar/NavBar.js";
+import { NavBar } from "./components/navbar/NavBar.jsx";
 import "./components/navbar/NavBar.css";
 import { ItemListContainer } from "./components/itemlistcontainer/ItemListContainer";
 import "./components/itemlistcontainer/itemlist/Item.css";
@@ -12,7 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-
+      
       <Switch>
         <div className="App">
 

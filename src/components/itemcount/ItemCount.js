@@ -1,27 +1,13 @@
-import { useState } from "react"
-
-export const ItemCount = ({ stock, initial, onAdd }) => {
-
-    const [count, setCount] = useState(parseInt(initial));
-
-    const onIncrease = () => {
-        if (count < stock) {
-            setCount(count + 1)
-        }
-    }
-    const onDecrease = () => {
-        if (count > 0) {
-            setCount(count - 1)
-        }
-    }
+export const ItemCount = ({ count, stock, onIncrease, onDecrease, postAdd }) => {
 
     return (
         <>
-            <h3> Items Agregados: {count} </h3>
-            <button onClick={onDecrease}>-</button>
-            <button onClick={() => onAdd()}>Agregar</button>
-            <button onClick={onIncrease}>+</button>
-            <h3>Stock: {stock}</h3>
+            <button onClick={() => onDecrease()}>-</button>
+            <span>{count}</span>
+            <button onClick={() => onIncrease()}>+</button>
+            <br></br>
+            <button onClick={() => postAdd()}>Agregar al carro</button>
+            <h4>Stock: {stock}</h4>
         </>
     )
 }

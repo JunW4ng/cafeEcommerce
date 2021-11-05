@@ -1,16 +1,16 @@
 import React from "react"
 import { Link } from "react-router-dom"
 import { CartWidget } from "../cartwidget/CartWidget"
-
-
+import logo from "../../images/logo.png"
 
 export const NavBar = () => {
     return (
+        <>
         <nav className="NavBarItems">
 
             <div className="logo">
                 <Link to={`/`}>
-                    <img src="./images/logo.png" alt="logo"></img>
+                    <img src={logo} alt="logo" />
                 </Link>
             </div>
 
@@ -22,5 +22,6 @@ export const NavBar = () => {
             </ul>
 
         </nav>
+        </>
     )
 }
