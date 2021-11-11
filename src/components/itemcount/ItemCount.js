@@ -1,4 +1,4 @@
-export const ItemCount = ({ count, stock, onIncrease, onDecrease, postAdd }) => {
+export const ItemCount = ({ item ,count, onIncrease, onDecrease, addItem, removeItem, clearCart }) => {
 
     return (
         <>
@@ -6,8 +6,11 @@ export const ItemCount = ({ count, stock, onIncrease, onDecrease, postAdd }) => 
             <span>{count}</span>
             <button onClick={() => onIncrease()}>+</button>
             <br></br>
-            <button onClick={() => postAdd()}>Agregar al carro</button>
-            <h4>Stock: {stock}</h4>
+            <button onClick={() => addItem(item, count)}>Agregar al carro</button>
+            <hr></hr>
+            <button onClick={() => removeItem(item)}>Eliminar del carro</button>
+            <button onClick={() => clearCart(item)}>Vaciar el carro</button>
+            <h4>Stock: {item.stock}</h4>
         </>
     )
 }
