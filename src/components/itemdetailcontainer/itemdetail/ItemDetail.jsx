@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useState } from "react";
-import { ExtraButtons } from "../../itemcount/ExtraButtons";
 import { ItemCount } from "../../itemcount/ItemCount";
+import { CartContext } from "../../../contexts/cartContext";
+//import { ExtraButtons } from "../../itemcount/ExtraButtons";
 
 export const ItemDetail = ({ item }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const onIncrease = () => {
     if (count < item.stock) {
@@ -19,14 +20,16 @@ export const ItemDetail = ({ item }) => {
   };
 
   //mostrar y ocultar boton
-  const [flag, setFlag] = useState(false);
+  /* const [flag, setFlag] = useState(false);
 
   const montarBotones = () => {
     if (count > 0) {
       console.log(`Se agregaron ${count}`);
       setFlag(true);
     }
-  };
+  }; */
+
+  const { addItem, removeItem, clearCart } = useContext(CartContext)
 
   return (
     <>
@@ -47,16 +50,16 @@ export const ItemDetail = ({ item }) => {
             </div>
             <div>
               <ItemCount
+                item={item}
                 count={count}
-                stock={item.stock}
                 onIncrease={onIncrease}
                 onDecrease={onDecrease}
-                postAdd={montarBotones}
+                addItem={addItem}
+                removeItem={removeItem}
+                clearCart={clearCart}
               />
             </div>
-            <div>
-              {flag && <ExtraButtons quantity={count}/>}
-              </div>
+            {/* <div>{flag && <ExtraButtons quantity={count} />}</div> */}
           </div>
         ) : (
           "Cargando detalle..."
