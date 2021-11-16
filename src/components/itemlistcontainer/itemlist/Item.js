@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 export const Item = ({ coffee }) => {
     return (
         <>
-            <div className="cards">
+            <div className="cards mt-5 mx-5">
                 <div className="image">
                     <Link to={`/item/${coffee.id}`}><img src={coffee.pictureUrl} alt=""></img></Link>
                 </div>

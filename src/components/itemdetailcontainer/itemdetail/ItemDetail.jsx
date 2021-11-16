@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useState } from "react";
 import { ItemCount } from "../../itemcount/ItemCount";
 import { CartContext } from "../../../contexts/cartContext";
-//import { ExtraButtons } from "../../itemcount/ExtraButtons";
+
 
 export const ItemDetail = ({ item }) => {
   const [count, setCount] = useState(1);
@@ -19,22 +19,12 @@ export const ItemDetail = ({ item }) => {
     }
   };
 
-  //mostrar y ocultar boton
-  /* const [flag, setFlag] = useState(false);
-
-  const montarBotones = () => {
-    if (count > 0) {
-      console.log(`Se agregaron ${count}`);
-      setFlag(true);
-    }
-  }; */
-
-  const { addItem, removeItem, clearCart } = useContext(CartContext)
+  const { addItem } = useContext(CartContext);
 
   return (
     <>
-      <div className="detailCard card">
         {item ? (
+      <div className="detailCard card">
           <div key={item.id}>
             <div>
               <img src={item.pictureUrl} alt=""></img>
@@ -55,16 +45,13 @@ export const ItemDetail = ({ item }) => {
                 onIncrease={onIncrease}
                 onDecrease={onDecrease}
                 addItem={addItem}
-                removeItem={removeItem}
-                clearCart={clearCart}
               />
             </div>
-            {/* <div>{flag && <ExtraButtons quantity={count} />}</div> */}
           </div>
-        ) : (
-          "Cargando detalle..."
-        )}
       </div>
+        ) : (
+          "Cargando productos..."
+        )}
     </>
   );
 };
