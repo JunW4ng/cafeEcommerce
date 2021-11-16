@@ -7,6 +7,8 @@ import { ItemDetailContainer } from "./components/itemdetailcontainer/ItemDetail
 import "./components/itemdetailcontainer/itemdetail/ItemDetail.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { CartProvider } from "./contexts/cartContext"
+import { Cart } from "./components/cart/Cart";
+import "./components/cart/Cart.css"
 
 function App() {
 
@@ -19,7 +21,6 @@ function App() {
           <div className="App">
 
             <Route exact path="/">
-              <p>Haz click en alguna imagen para ver el detalle del producto</p>
               <ItemListContainer />
             </Route>
 
@@ -29,6 +30,10 @@ function App() {
 
             <Route exact path="/item/:id">
               <ItemDetailContainer />
+            </Route>
+
+            <Route exact path="/cart">
+              <Cart />
             </Route>
 
           </div>

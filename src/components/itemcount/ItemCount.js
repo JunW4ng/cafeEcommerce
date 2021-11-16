@@ -1,16 +1,23 @@
-export const ItemCount = ({ item ,count, onIncrease, onDecrease, addItem, removeItem, clearCart }) => {
+import { useContext } from "react"
+import { CartContext } from "../../contexts/cartContext"
+import { Link } from "react-router-dom"
+
+export const ItemCount = ({ item, count, onIncrease, onDecrease, addItem }) => {
+
+    const { cart } = useContext(CartContext)
 
     return (
         <>
-            <button onClick={() => onDecrease()}>-</button>
-            <span>{count}</span>
-            <button onClick={() => onIncrease()}>+</button>
+            <div className="addRemoveButtons pt-2">
+                <button onClick={() => onDecrease()}>-</button>
+                <span className="px-2">{count}</span>
+                <button onClick={() => onIncrease()}>+</button>
+            </div>
             <br></br>
             <button onClick={() => addItem(item, count)}>Agregar al carro</button>
+            <h5>Stock: {item.stock}</h5>
             <hr></hr>
-            <button onClick={() => removeItem(item)}>Eliminar del carro</button>
-            <button onClick={() => clearCart(item)}>Vaciar el carro</button>
-            <h4>Stock: {item.stock}</h4>
+            <button><Link to={`/cart`}>Go to cart ({cart.length})</Link></button>
         </>
     )
 }
