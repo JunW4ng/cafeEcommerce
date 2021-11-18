@@ -1,34 +1,25 @@
 import React, { useEffect } from "react"
 import { useState } from "react/cjs/react.development"
 import { MapeoLista } from "./itemlist/ItemList";
-import { CoffeeProducts } from "../catalogue/Coffee";
 import { useParams } from "react-router";
+import { getFirestore } from "../../firebase";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 export const ItemListContainer = () => {
     const { categoryId } = useParams();
-    const [coffeeGrano, setCoffeeGrano] = useState(null);
+    const [itemsCoffeeBeans, setitemsCoffeeBeans] = useState(null);
 
     useEffect(() => {
-        const task = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(CoffeeProducts)
-            }, 1500);
-        });
+        const db = getFirestore();
 
-        task.then(
-            (data) => {
-                categoryId ?
-                    setCoffeeGrano(data.filter((coffeeProducts) => coffeeProducts.category === categoryId)) : setCoffeeGrano(data)
-            },
-            (err) => {
-                console.log("error: " + err);
-            }
-        ).catch((err) => {
-            console.log("soy el catch: ", err);
-        });
+        const categoryQuery = categoryId ? query(collection(db, "catalogo"), where("category", "==", categoryId)) : collection(db, "catalogo")
+
+        getDocs(categoryQuery).then((snapshot) => {
+            setitemsCoffeeBeans(snapshot.docs.map((doc) => doc.data()))
+        })
     }, [categoryId]);
 
     return (
-        <MapeoLista listaCoffee={coffeeGrano} />
+        <MapeoLista listaCoffee={itemsCoffeeBeans} />
     )
 };

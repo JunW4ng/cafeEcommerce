@@ -32,7 +32,13 @@ export const NavBar = () => {
               <CartWidget />
             </Link>
           </li>
-          {cart.length? (<Link to={`/cart`}><button className="badge bg-dark">{cart.length}</button></Link>) : ("") }
+          {cart.length ? (
+            <Link to={`/cart`}>
+              <button className="badge bg-dark">{cart.length}</button>
+            </Link>
+          ) : (
+            ""
+          )}
         </ul>
       </nav>
     </>
