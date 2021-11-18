@@ -3,7 +3,6 @@ import { useState } from "react";
 import { ItemCount } from "../../itemcount/ItemCount";
 import { CartContext } from "../../../contexts/cartContext";
 
-
 export const ItemDetail = ({ item }) => {
   const [count, setCount] = useState(1);
 
@@ -23,8 +22,8 @@ export const ItemDetail = ({ item }) => {
 
   return (
     <>
-        {item ? (
-      <div className="detailCard card">
+      {item ? (
+        <div className="detailCard card">
           <div key={item.id}>
             <div>
               <img src={item.pictureUrl} alt=""></img>
@@ -48,10 +47,10 @@ export const ItemDetail = ({ item }) => {
               />
             </div>
           </div>
-      </div>
-        ) : (
-          "Cargando productos..."
-        )}
+        </div>
+      ) : (
+        "Cargando productos..."
+      )}
     </>
   );
 };
