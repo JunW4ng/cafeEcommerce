@@ -10,7 +10,7 @@ export const NavBar = () => {
 
   return (
     <>
-      <nav className="NavBarItems">
+      <nav className="NavBarItems container-fluid">
         <div className="logo">
           <Link to={`/`}>
             <img src={logo} alt="logo" />
@@ -23,6 +23,9 @@ export const NavBar = () => {
           </li>
           <li>
             <Link to={`/category/LATAM`}>LATAM</Link>
+          </li>
+          <li>
+            <Link to={`/category/V60`}>V60</Link>
           </li>
           <li>
             <a href="https://www.google.com/search?q=cafe+jw">Contact</a>

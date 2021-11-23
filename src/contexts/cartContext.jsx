@@ -5,6 +5,7 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
+  //Agrega item con condicional que no deja agregar el mismo item al carro
   const addItem = (item, quantity) => {
     const product = {
       id: item.id,
@@ -20,22 +21,26 @@ export const CartProvider = ({ children }) => {
       return false;
     }
   };
-
-  const removeItem = (item) => {
-    const newItemArray = cart.filter((newItem) => newItem.id !== item.id);
-    setCart(newItemArray);
-  };
-
-  const clearCart = () => {
-    setCart([]);
-  };
-
+  
+  //Verifica si esta o no el item en el carro
   const isItemInCart = (id) => {
     const filteredCart = cart.filter((item) => item.id === id);
     const inCart = filteredCart.length === 0 ? false : true;
     return inCart;
   };
 
+  //Remover un item del carro
+  const removeItem = (item) => {
+    const newItemArray = cart.filter((newItem) => newItem.id !== item.id);
+    setCart(newItemArray);
+  };
+
+  //Remover todos los items del carro
+  const clearCart = () => {
+    setCart([]);
+  };
+
+  //Total de la compra
   const totalPrice = cart.reduce(
     (acumValue, currValue) => acumValue + currValue.price * currValue.quantity,0);
 

@@ -1,11 +1,12 @@
 import { useContext } from "react"
 import { CartContext } from "../../contexts/cartContext"
 import { Link } from "react-router-dom"
+import { Checkout } from "../checkout/Checkout"
 
 
 export const Cart = () => {
 
-    const { cart, removeItem, totalPrice } = useContext(CartContext)
+    const { cart, removeItem } = useContext(CartContext)
 
     return (
         <>
@@ -15,9 +16,9 @@ export const Cart = () => {
                     <br></br>
                     <button><Link to={`/`}>Back to Products</Link></button>
                 </div>) : (
-                <div className="cardCart container mb-3" /* style="max-width: 540px; "*/>
+                <div className="cardCart container mb-3">
                     {cart.map((item) =>
-                        <div className="row g-0 my-5">
+                        <div className="row g-0 my-5" key={item.id}>
                             <div className="col-md-4">
                                 <Link to={`/item/${item.id}`}><img src={item.img} className="img-fluid rounded-start" alt="FotoProducto" /></Link>
                             </div>
@@ -33,8 +34,7 @@ export const Cart = () => {
                         </div>
                     )}
                     <hr></hr>
-                    <h2>TOTAL: ${totalPrice}</h2>
-                    <a href="https://updatefaker.com/w98/index.html"><button className="p-2">Proceed to checkout</button></a>
+                    <Checkout />
                 </div>
             )}
         </>

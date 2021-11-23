@@ -9,6 +9,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { CartProvider } from "./contexts/cartContext"
 import { Cart } from "./components/cart/Cart";
 import "./components/cart/Cart.css"
+import { Footer } from "./components/footer/Footer";
+import "./components/footer/Footer.css"
 
 function App() {
 
@@ -21,15 +23,21 @@ function App() {
           <div className="App">
 
             <Route exact path="/">
-              <ItemListContainer />
+              <div className="listContainer">
+                <ItemListContainer />
+              </div>
             </Route>
 
             <Route exact path="/category/:categoryId">
-              <ItemListContainer />
+              <div className="listContainer">
+                <ItemListContainer />
+              </div>
             </Route>
 
             <Route exact path="/item/:id">
-              <ItemDetailContainer />
+              <div className="listDetailContainer container text-center">
+                <ItemDetailContainer />
+              </div>
             </Route>
 
             <Route exact path="/cart">
@@ -39,6 +47,7 @@ function App() {
           </div>
         </Switch>
 
+        <Footer />
       </CartProvider>
     </BrowserRouter>
   );
