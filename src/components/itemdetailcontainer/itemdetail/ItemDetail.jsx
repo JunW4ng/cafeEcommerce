@@ -31,11 +31,11 @@ export const ItemDetail = ({ item }) => {
             <div className="detailName">
               <h1>{item.name}</h1>
             </div>
-            <div className="detailPrice">
-              <h1>$ {item.price}</h1>
-            </div>
             <div className="detailDescription">
               <h3>{item.description}</h3>
+            </div>
+            <div className="detailPrice">
+              <h1>$ {item.price}</h1>
             </div>
             <div>
               <ItemCount

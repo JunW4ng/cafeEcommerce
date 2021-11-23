@@ -1,5 +1,10 @@
+.listDetailContainer{
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: inline;
+    justify-content: center;
+}
+
 .detailCard {
-    display: flex;
-    max-width: 540px;
-    text-align: center;
+    max-width: 550px;
 }
