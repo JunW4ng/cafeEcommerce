@@ -21,7 +21,7 @@ export const CartProvider = ({ children }) => {
       return false;
     }
   };
-  
+
   //Verifica si esta o no el item en el carro
   const isItemInCart = (id) => {
     const filteredCart = cart.filter((item) => item.id === id);
@@ -42,11 +42,21 @@ export const CartProvider = ({ children }) => {
 
   //Total de la compra
   const totalPrice = cart.reduce(
-    (acumValue, currValue) => acumValue + currValue.price * currValue.quantity,0);
+    (acumValue, currValue) => acumValue + currValue.price * currValue.quantity,
+    0
+  );
 
   return (
     <CartContext.Provider
-      value={{ cart, setCart, addItem, removeItem, clearCart, isItemInCart, totalPrice }}
+      value={{
+        cart,
+        setCart,
+        addItem,
+        removeItem,
+        clearCart,
+        isItemInCart,
+        totalPrice,
+      }}
     >
       {children}
     </CartContext.Provider>
