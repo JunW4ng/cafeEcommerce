@@ -11,16 +11,17 @@ import { Cart } from "./components/cart/Cart";
 import "./components/cart/Cart.css"
 import { Footer } from "./components/footer/Footer";
 import "./components/footer/Footer.css"
+import { Checkout } from "./components/checkout/Checkout";
 
 function App() {
 
   return (
-    <BrowserRouter>
-      <CartProvider>
-        <NavBar />
+    <div className="App">
+      <BrowserRouter>
+        <CartProvider>
+          <NavBar />
 
-        <Switch>
-          <div className="App">
+          <Switch>
 
             <Route exact path="/">
               <div className="listContainer">
@@ -44,12 +45,16 @@ function App() {
               <Cart />
             </Route>
 
-          </div>
-        </Switch>
+            <Route exact path="/checkout">
+              <Checkout />
+            </Route>
 
-        <Footer />
-      </CartProvider>
-    </BrowserRouter>
+          </Switch>
+
+          <Footer />
+        </CartProvider>
+      </BrowserRouter>
+    </div>
   );
 }
 

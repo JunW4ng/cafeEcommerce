@@ -12,6 +12,7 @@ export const ItemDetailContainer = () => {
   useEffect(() => {
     const db = getFirestore();
     const ref = doc(db, "catalogo", id);
+
     getDoc(ref).then((snapshot) => {
       if (snapshot.exists()) {
         setDetailProduct(snapshot.data());
