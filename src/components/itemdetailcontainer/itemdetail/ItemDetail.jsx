@@ -22,35 +22,37 @@ export const ItemDetail = ({ item }) => {
 
   return (
     <>
-      {item ? (
-        <div className="detailCard card">
-          <div key={item.id}>
-            <div>
-              <img src={item.pictureUrl} alt=""></img>
-            </div>
-            <div className="detailName">
-              <h1>{item.name}</h1>
-            </div>
-            <div className="detailDescription">
-              <h3>{item.description}</h3>
-            </div>
-            <div className="detailPrice">
-              <h1>$ {item.price}</h1>
-            </div>
-            <div>
-              <ItemCount
-                item={item}
-                count={count}
-                onIncrease={onIncrease}
-                onDecrease={onDecrease}
-                addItem={addItem}
-              />
+      <div className="cardDetail rounded d-flex justify-content-center mt-5">
+        {item ? (
+          <div className="detailCard card shadow-lg">
+            <div key={item.id}>
+              <div>
+                <img src={item.pictureUrl} alt=""></img>
+              </div>
+              <div className="detailName">
+                <h1>{item.name}</h1>
+              </div>
+              <div className="detailDescription">
+                <h3>{item.description}</h3>
+              </div>
+              <div className="detailPrice">
+                <h1>$ {item.price}</h1>
+              </div>
+              <div>
+                <ItemCount
+                  item={item}
+                  count={count}
+                  onIncrease={onIncrease}
+                  onDecrease={onDecrease}
+                  addItem={addItem}
+                />
+              </div>
             </div>
           </div>
-        </div>
-      ) : (
-        "Cargando productos..."
-      )}
+        ) : (
+          "Cargando productos..."
+        )}
+      </div>
     </>
   );
 };

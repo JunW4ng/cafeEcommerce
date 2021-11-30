@@ -1,4 +1,4 @@
-.App{
+.App {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,4 +9,8 @@
   min-height: 100vh;
 
   text-align: center;
+
+  background-image: url("./images/home01.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }

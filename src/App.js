@@ -12,6 +12,7 @@ import "./components/cart/Cart.css"
 import { Footer } from "./components/footer/Footer";
 import "./components/footer/Footer.css"
 import { Checkout } from "./components/checkout/Checkout";
+import Home from "./components/home/Home";
 
 function App() {
 
@@ -19,26 +20,23 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <CartProvider>
+
           <NavBar />
+          <Home/>
 
           <Switch>
-
-            <Route exact path="/">
-              <div className="listContainer">
+            <Route exact path="/products">
                 <ItemListContainer />
-              </div>
             </Route>
 
             <Route exact path="/category/:categoryId">
-              <div className="listContainer">
                 <ItemListContainer />
-              </div>
             </Route>
 
             <Route exact path="/item/:id">
-              <div className="listDetailContainer container text-center">
+              {/* <div className="listDetailContainer container text-center">
+              </div> */}
                 <ItemDetailContainer />
-              </div>
             </Route>
 
             <Route exact path="/cart">
@@ -48,10 +46,10 @@ function App() {
             <Route exact path="/checkout">
               <Checkout />
             </Route>
-
           </Switch>
 
           <Footer />
+
         </CartProvider>
       </BrowserRouter>
     </div>
