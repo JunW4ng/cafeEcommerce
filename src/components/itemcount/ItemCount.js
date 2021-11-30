@@ -9,15 +9,17 @@ export const ItemCount = ({ item, count, onIncrease, onDecrease, addItem }) => {
     return (
         <>
             <div className="addRemoveButtons pt-2">
-                <button onClick={() => onDecrease()}>-</button>
-                <span className="px-2">{count}</span>
-                <button onClick={() => onIncrease()}>+</button>
+                <button className="btn btn-outline-dark" onClick={() => onDecrease()}>-</button>
+                <span className="px-4">{count}</span>
+                <button className="btn btn-outline-dark" onClick={() => onIncrease()}>+</button>
             </div>
             <br></br>
-            <button onClick={() => addItem(item, count)}>Agregar al carro</button>
+            <button className="btn btn-outline-dark mb-3" onClick={() => addItem(item, count)}>Agregar al carro</button>
             <h5>Stock: {item.stock}</h5>
             <hr></hr>
-            <button><Link to={`/cart`}>Go to cart ({cart.length})</Link></button>
+            <div className="mb-3">
+                <button className="btn btn-outline-dark"><Link to={`/cart`}>Go to cart ({cart.length})</Link></button>
+            </div>
         </>
     )
 }

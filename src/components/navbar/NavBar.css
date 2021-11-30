@@ -5,6 +5,7 @@ nav {
   min-height: 9rem;
   font-size: 1.2rem;
   background-color: #CB8677;
+  margin-bottom: 100px;
 }
 
 nav .logo {
@@ -18,7 +19,7 @@ nav .nav-links {
 }
 
 nav .nav-links a:hover{
-  text-decoration:underline
+  text-decoration-color: none;
 }
 
 nav .nav-links a{
@@ -34,4 +35,17 @@ li {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.dropdown-menu{
+  font-weight: 700;
+}
+
+.btn {
+  font-weight: 700;
+  font-size: 19.2px;
+}
+
+.nav-link {
+  color: black;
 }
