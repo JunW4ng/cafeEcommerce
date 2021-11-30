@@ -1,4 +1,5 @@
 import React from "react";
+import { Loader } from "../../loader/Loader";
 import { Item } from "./Item";
 
 export const MapeoLista = ({ listaCoffee }) => {
@@ -6,7 +7,7 @@ export const MapeoLista = ({ listaCoffee }) => {
     <div>
       {listaCoffee
         ? listaCoffee.map((coffee) => <Item key={coffee.id} coffee={coffee} />)
-        : "Cargando productos..."}
+        : < Loader />}
     </div>
   );
 };

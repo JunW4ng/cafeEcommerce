@@ -3,5 +3,22 @@
     background-color: #CB8677;
     padding: 70px;
     margin-top: auto;
-    margin-top: 420px;
+    margin-top: 275px;
+}
+
+.socialIcon{
+    font-size: 40px;
+    margin: 15px;
+}
+
+.followFooter{
+    font-weight:bolder;
+}
+
+.connect{
+    display: inline-block
+}
+
+.contact{
+    display: inline-block
 }

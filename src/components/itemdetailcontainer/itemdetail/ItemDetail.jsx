@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import { useState } from "react";
 import { ItemCount } from "../../itemcount/ItemCount";
 import { CartContext } from "../../../contexts/cartContext";
+import { Loader } from "../../loader/Loader";
+
 
 export const ItemDetail = ({ item }) => {
   const [count, setCount] = useState(1);
@@ -30,13 +32,13 @@ export const ItemDetail = ({ item }) => {
                 <img src={item.pictureUrl} alt=""></img>
               </div>
               <div className="detailName">
-                <h1>{item.name}</h1>
+                <h1 className="mt-3">{item.name}</h1>
               </div>
               <div className="detailDescription">
                 <h3>{item.description}</h3>
               </div>
               <div className="detailPrice">
-                <h1>$ {item.price}</h1>
+                <h1 className="fs-3 mt-3">$ {item.price}</h1>
               </div>
               <div>
                 <ItemCount
@@ -50,7 +52,7 @@ export const ItemDetail = ({ item }) => {
             </div>
           </div>
         ) : (
-          "Cargando productos..."
+          <Loader/>
         )}
       </div>
     </>

@@ -13,6 +13,7 @@ import { Footer } from "./components/footer/Footer";
 import "./components/footer/Footer.css"
 import { Checkout } from "./components/checkout/Checkout";
 import Home from "./components/home/Home";
+import "./components/cartwidget/CartWidget.css"
 
 function App() {
 
@@ -22,21 +23,21 @@ function App() {
         <CartProvider>
 
           <NavBar />
-          <Home/>
 
           <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
             <Route exact path="/products">
-                <ItemListContainer />
+              <ItemListContainer />
             </Route>
 
             <Route exact path="/category/:categoryId">
-                <ItemListContainer />
+              <ItemListContainer />
             </Route>
 
             <Route exact path="/item/:id">
-              {/* <div className="listDetailContainer container text-center">
-              </div> */}
-                <ItemDetailContainer />
+              <ItemDetailContainer />
             </Route>
 
             <Route exact path="/cart">
