@@ -9,9 +9,9 @@ export const ItemCount = ({ item, count, onIncrease, onDecrease, addItem }) => {
     return (
         <>
             <div className="addRemoveButtons pt-2">
-                <button className="btn btn-outline-dark" onClick={() => onDecrease()}>-</button>
-                <span className="px-4">{count}</span>
-                <button className="btn btn-outline-dark" onClick={() => onIncrease()}>+</button>
+                <button className="btn btn-outline-dark fs-5" onClick={() => onDecrease()}>-</button>
+                <span className="px-4 fs-5">{count}</span>
+                <button className="btn btn-outline-dark fs-5" onClick={() => onIncrease()}>+</button>
             </div>
             <br></br>
             <button className="btn btn-outline-dark mb-3" onClick={() => addItem(item, count)}>Agregar al carro</button>

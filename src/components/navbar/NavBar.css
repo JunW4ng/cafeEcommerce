@@ -49,3 +49,11 @@ a {
 .nav-link {
   color: black;
 }
+
+.miniBar{
+  height: 25px;
+}
+
+.shopNow{
+  text-decoration: underline;
+}

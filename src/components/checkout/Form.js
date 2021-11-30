@@ -7,7 +7,7 @@ export const BuyerForm = ({ setBuyer, buyer, name }) => {
     return (
         <>
             <div>
-                <input type="text" name={name} onChange={handleBuyerChange}></input>
+                <input className="" type="text" name={name} onChange={handleBuyerChange}></input>
             </div>
         </>
     )

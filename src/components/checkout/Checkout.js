@@ -62,31 +62,30 @@ export const Checkout = () => {
                     <IdOrder orderId={orderId} />
                 </div>
             ) : (
-                <form className="container row g-3 mt-5" onSubmit={handleSubmit}>
+                    <form className="container-fluid row justify-content-center" onSubmit={handleSubmit}>
 
-                    <div className="col-6">
-                        <label>Name</label>
-                        <BuyerForm setBuyer={setBuyerData} name="Name" buyer={buyerData} />
-                    </div>
-                    <div className="col-6">
-                        <label>Last Name</label>
-                        <BuyerForm setBuyer={setBuyerData} name="LastName" buyer={buyerData} />
-                    </div>
-                    <div className="col-6">
-                        <label>Email</label>
-                        <BuyerForm setBuyer={setBuyerData} name="Email" buyer={buyerData} />
-                    </div>
-                    <div className="col-6">
-                        <label>Phone</label>
-                        <BuyerForm setBuyer={setBuyerData} name="Phone" buyer={buyerData} />
-                    </div>
+                        <div className="col-6">
+                            <label className="fs-4">Name</label>
+                            <BuyerForm setBuyer={setBuyerData} name="Name" buyer={buyerData} />
+                        </div>
+                        <div className="col-6">
+                            <label className="fs-4">Last Name</label>
+                            <BuyerForm setBuyer={setBuyerData} name="LastName" buyer={buyerData} />
+                        </div>
+                        <div className="col-6">
+                            <label className="fs-4">Email</label>
+                            <BuyerForm setBuyer={setBuyerData} name="Email" buyer={buyerData} />
+                        </div>
+                        <div className="col-6">
+                            <label className="fs-4">Phone</label>
+                            <BuyerForm setBuyer={setBuyerData} name="Phone" buyer={buyerData} />
+                        </div>
 
-                    <div className="text-end">
-                        <h2 className="totalPrice mt-5">TOTAL: ${totalPrice}</h2>
-                        <button type="submit" className="p-2 checkButton">Proceed to checkout</button>
-                    </div>
-
-                </form>
+                        <div className="text-center">
+                            <h2 className="totalPrice fs-1 mt-5">TOTAL: ${totalPrice}</h2>
+                            <button type="submit" className="btn border-2 border-dark p-2 checkButton bg-dark text-white mt-2">Proceed to checkout</button>
+                        </div>
+                    </form>
             )}
         </>
     )

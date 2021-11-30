@@ -10,13 +10,13 @@ export const Cart = () => {
     return (
         <>
             {cart.length === 0 ? (
-                <div className="container text-center mt-5">
-                    Cart is Empty
-                    <button><Link to={`/`}>Back to Products</Link></button>
+                <div className="container text-center my-5 pb-4">
+                    <p className="fs-1 mb-5">Cart is Empty</p>
+                    <button className="btn border border-dark bg-dark text-white"><Link to={`/products`}>Back to Products</Link></button>
                 </div>) : (
                 <div className="cardCart container mb-3">
                     {cart.map((item) =>
-                        <div className="row g-0 my-5" key={item.id}>
+                        <div className="row g-0 my-5 " key={item.id}>
                             <div className="col-md-4">
                                 <Link to={`/item/${item.id}`}><img src={item.img} className="img-fluid rounded-start shadow-lg" alt="FotoProducto" /></Link>
                             </div>
@@ -31,7 +31,7 @@ export const Cart = () => {
                         </div>
                     )}
                     <div>
-                        <Link to={`/checkout`}><button className="btn-lg shadow">Checkout</button></Link>
+                        <Link to={`/checkout`}><button className="btn-lg shadow bg-dark text-white border-0">Checkout</button></Link>
                     </div>
                 </div>
             )}
