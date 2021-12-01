@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 export const Cart = () => {
 
-    const { cart, removeItem } = useContext(CartContext)
+    const { cart, removeItem, totalPrice } = useContext(CartContext)
 
     return (
         <>
@@ -31,7 +31,8 @@ export const Cart = () => {
                         </div>
                     )}
                     <div>
-                        <Link to={`/checkout`}><button className="btn-lg shadow bg-dark text-white border-0">Checkout</button></Link>
+                        <p className="fs-1">Total $ {totalPrice}</p>
+                        <Link to={`/checkout`}><button className="btn-lg shadow bg-dark text-white border-0">Proceed to checkout</button></Link>
                     </div>
                 </div>
             )}
