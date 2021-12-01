@@ -47,8 +47,6 @@ export const Checkout = () => {
             //Limpia el carro
             clearCart()
 
-            console.log(newOrder);
-
         } catch (err) {
             console.error(err)
         }
@@ -83,7 +81,7 @@ export const Checkout = () => {
 
                         <div className="text-center">
                             <h2 className="totalPrice fs-1 mt-5">TOTAL: ${totalPrice}</h2>
-                            <button type="submit" className="btn border-2 border-dark p-2 checkButton bg-dark text-white mt-2">Proceed to checkout</button>
+                            <button type="submit" className="btn border-2 border-dark p-2 checkButton bg-dark text-white mt-2">Checkout</button>
                         </div>
                     </form>
             )}

@@ -25,11 +25,13 @@ export const Footer = () => {
                     </div>
                     <hr></hr>
                     <p className="fs-1 fw-bold mt-4">J | W </p>
-                    © 2021, J|W Coffee Roasters : Speciality Coffee, All Rights Reserved.
                     <div>
                         <FontAwesomeIcon icon={faCcMastercard} className="socialIcon" />
                         <FontAwesomeIcon icon={faCcVisa} className="socialIcon" />
                     </div>
+                </div>
+                <div className="miniBar bg-dark text-white">
+                    <p>© 2021, J|W Coffee Roasters : Speciality Coffee, All Rights Reserved.</p>
                 </div>
             </footer>
         </>
